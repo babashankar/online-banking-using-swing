@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,8 +16,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import org.bson.Document;
-import java.awt.Component;
-import javax.swing.Box;
 
 public class Welcome extends JFrame {
 
@@ -39,7 +38,7 @@ public class Welcome extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 871, 617);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(233, 213, 218));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -50,7 +49,7 @@ public class Welcome extends JFrame {
 		contentPane.add(topmenu);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(3, 83, 151));
+		panel.setBackground(new Color(0, 102, 204));
 		panel.setBounds(0, 77, 243, 503);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -67,7 +66,7 @@ public class Welcome extends JFrame {
 		});
 		userInfo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		userInfo.setBounds(0, 53, 243, 29);
-		userInfo.setBackground(new Color(3, 83, 151));
+		userInfo.setBackground(new Color(0, 102, 204));
 		panel.add(userInfo);
 		
 		JButton fundsTransfer = new JButton("Transfer Funds");
@@ -79,8 +78,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		fundsTransfer.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		fundsTransfer.setBackground(new Color(3, 83, 151));
-		fundsTransfer.setBounds(0, 96, 243, 29);
+		fundsTransfer.setBackground(new Color(0, 102, 204));
+		fundsTransfer.setBounds(0, 91, 243, 29);
 		panel.add(fundsTransfer);
 		
 		JButton editDetails = new JButton("Edit Details");
@@ -94,8 +93,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		editDetails.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		editDetails.setBackground(new Color(3, 83, 151));
-		editDetails.setBounds(0, 141, 243, 29);
+		editDetails.setBackground(new Color(0, 102, 204));
+		editDetails.setBounds(0, 130, 243, 29);
 		panel.add(editDetails);
 		
 		JButton recTransactions = new JButton("Recent Transactions");
@@ -107,8 +106,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		recTransactions.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		recTransactions.setBackground(new Color(3, 83, 151));
-		recTransactions.setBounds(0, 180, 243, 29);
+		recTransactions.setBackground(new Color(0, 102, 204));
+		recTransactions.setBounds(0, 169, 243, 29);
 		panel.add(recTransactions);
 		
 		JButton printSmt = new JButton("Print Statement");
@@ -120,8 +119,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		printSmt.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		printSmt.setBackground(new Color(3, 83, 151));
-		printSmt.setBounds(0, 219, 243, 29);
+		printSmt.setBackground(new Color(0, 102, 204));
+		printSmt.setBounds(0, 208, 243, 29);
 		panel.add(printSmt);
 		
 		JButton btnLogout = new JButton("Logout");
@@ -135,24 +134,32 @@ public class Welcome extends JFrame {
 		});
 		btnLogout.setForeground(new Color(255, 250, 250));
 		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLogout.setBackground(new Color(3, 83, 151));
+		btnLogout.setBackground(new Color(0, 102, 204));
 		btnLogout.setBounds(0, 474, 243, 29);
 		panel.add(btnLogout);
-		
-		JLabel profilName = new JLabel("username");
 		String u=d.get("username").toString();
-		profilName.setText(u);
-		profilName.setHorizontalAlignment(SwingConstants.CENTER);
-		profilName.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		profilName.setBounds(453, 343, 217, 37);
-		contentPane.add(profilName);
-		
-		JLabel userMobile = new JLabel("mobilenumber");
 		String m=d.get("mobile").toString();
-		userMobile.setText(m);
-		userMobile.setHorizontalAlignment(SwingConstants.CENTER);
-		userMobile.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		userMobile.setBounds(453, 375, 217, 37);
-		contentPane.add(userMobile);
+		recTransactions.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		userInfo.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		fundsTransfer.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		recTransactions.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		printSmt.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		btnLogout.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		editDetails.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\NANI\\Downloads\\Untitled design (1).png"));
+		lblNewLabel.setBounds(439, 112, 253, 197);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("BANKING MADE SIMPLE.");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblNewLabel_1.setBounds(418, 286, 302, 89);
+		contentPane.add(lblNewLabel_1);
+		
+		
+		
+		
 	}
+	
 }

@@ -18,11 +18,13 @@ import java.awt.Font;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JScrollPane;
+import javax.swing.JLabel;
 
 public class Transactions extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JPanel panel;
 
 	/**
 	 * Launch the application.
@@ -42,8 +44,9 @@ public class Transactions extends JFrame {
 		String[][] trans= new String[11][6];
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 913, 284);
+		setBounds(100, 100, 913, 358);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -81,12 +84,22 @@ public class Transactions extends JFrame {
 				"Transaction id", "Time", "Transaction type", "amount", "Log", "Balance"
 			}
 		));
-		table.setBounds(25, 68, 844, 176);
+		table.setBounds(23, 135, 844, 176);
 		contentPane.add(table);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(276, 64, 2, 2);
 		contentPane.add(scrollPane);
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(0, 102, 204));
+		panel.setBounds(0, 0, 899, 63);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("TRANSACTIONS");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel.add(lblNewLabel);
 		
 	
 	}

@@ -31,7 +31,6 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField userName;
 	private JPasswordField password;
-	private JTextField txtLogin;
 
 	/**
 	 * Launch the application.
@@ -58,7 +57,8 @@ public class Login extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 625, 634);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(237, 230, 219));
+		contentPane.setForeground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -86,8 +86,6 @@ public class Login extends JFrame {
 		contentPane.add(password);
 		
 		JButton loginButton = new JButton("Login");
-		loginButton.setForeground(new Color(0, 0, 0));
-		loginButton.setBackground(new Color(255, 255, 224));
 		loginButton.setBounds(191, 334, 85, 21);
 		loginButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		loginButton.addActionListener(new ActionListener() {
@@ -119,8 +117,6 @@ public class Login extends JFrame {
 		contentPane.add(loginButton);
 		
 		JButton resetButton = new JButton("Reset");
-		resetButton.setForeground(new Color(0, 0, 0));
-		resetButton.setBackground(new Color(255, 255, 224));
 		resetButton.setBounds(305, 334, 85, 21);
 		resetButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		resetButton.addActionListener(new ActionListener() {
@@ -133,7 +129,6 @@ public class Login extends JFrame {
 		
 		JButton registerBtn = new JButton("New user? Register.");
 		registerBtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		registerBtn.setBackground(new Color(255, 255, 224));
 		registerBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Register frame = new Register();
@@ -146,14 +141,14 @@ public class Login extends JFrame {
 		contentPane.add(registerBtn);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 102, 204));
+		panel.setForeground(new Color(51, 102, 204));
 		panel.setBounds(0, 0, 611, 76);
 		contentPane.add(panel);
 		
-		txtLogin = new JTextField();
-		txtLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		txtLogin.setFont(new Font("Calibri", Font.BOLD, 33));
-		txtLogin.setText("LOGIN");
-		panel.add(txtLogin);
-		txtLogin.setColumns(10);
+		JLabel lblNewLabel_2 = new JLabel("Login");
+		panel.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 35));
 	}
 }

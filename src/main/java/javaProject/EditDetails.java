@@ -141,5 +141,15 @@ public class EditDetails extends JFrame {
 		cancel.setBounds(326, 419, 85, 21);
 		contentPane.add(cancel);
 		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 102, 204));
+		panel.setBounds(0, 0, 714, 69);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel_4 = new JLabel("EDIT");
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 38));
+		panel.add(lblNewLabel_4);
+		
 	}
 }

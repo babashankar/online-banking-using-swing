@@ -57,14 +57,15 @@ public class Register extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 605, 640);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(204, 51, 204));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(204, 51, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel userNameLabel = new JLabel("Username");
-		userNameLabel.setForeground(Color.WHITE);
+		userNameLabel.setBackground(new Color(0, 0, 0));
+		userNameLabel.setForeground(new Color(0, 0, 0));
 		userNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		userNameLabel.setBounds(122, 182, 92, 13);
 		contentPane.add(userNameLabel);
@@ -75,7 +76,8 @@ public class Register extends JFrame {
 		userName.setColumns(10);
 		
 		JLabel lblFullname = new JLabel("Fullname");
-		lblFullname.setForeground(Color.WHITE);
+		lblFullname.setBackground(new Color(0, 0, 0));
+		lblFullname.setForeground(new Color(0, 0, 0));
 		lblFullname.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblFullname.setBounds(122, 232, 92, 13);
 		contentPane.add(lblFullname);
@@ -86,7 +88,7 @@ public class Register extends JFrame {
 		contentPane.add(fullName);
 		
 		JLabel passwordLabel = new JLabel("Password");
-		passwordLabel.setForeground(Color.WHITE);
+		passwordLabel.setForeground(new Color(0, 0, 0));
 		passwordLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		passwordLabel.setBounds(122, 297, 73, 13);
 		contentPane.add(passwordLabel);
@@ -97,7 +99,7 @@ public class Register extends JFrame {
 		password.setColumns(10);
 		
 		JLabel mobileLabel = new JLabel("Mobile");
-		mobileLabel.setForeground(Color.WHITE);
+		mobileLabel.setForeground(new Color(0, 0, 0));
 		mobileLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		mobileLabel.setBounds(122, 346, 45, 13);
 		contentPane.add(mobileLabel);
@@ -108,7 +110,7 @@ public class Register extends JFrame {
 		mobile.setColumns(10);
 		
 		JLabel cityLabel = new JLabel("City");
-		cityLabel.setForeground(Color.WHITE);
+		cityLabel.setForeground(new Color(0, 0, 0));
 		cityLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		cityLabel.setBounds(122, 403, 45, 13);
 		contentPane.add(cityLabel);
@@ -162,10 +164,15 @@ public class Register extends JFrame {
 		regBtn.setBounds(135, 465, 253, 21);
 		contentPane.add(regBtn);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\NANI\\Downloads\\ibanking (611 \u00D7 73 px) (1).png"));
-		lblNewLabel.setBounds(0, 0, 591, 73);
-		contentPane.add(lblNewLabel);
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 102, 204));
+		panel.setBounds(0, 0, 591, 74);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("REGISTER");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel.add(lblNewLabel);
 		
 		
 	}
