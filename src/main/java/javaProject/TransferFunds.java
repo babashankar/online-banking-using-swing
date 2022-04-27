@@ -14,6 +14,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import org.bson.Document;
+import javax.swing.ImageIcon;
 
 public class TransferFunds extends JFrame {
 
@@ -35,7 +36,7 @@ public class TransferFunds extends JFrame {
 	public TransferFunds(final Document d) {
 		this.d=d;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 741, 411);
+		setBounds(100, 100, 827, 411);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -45,37 +46,39 @@ public class TransferFunds extends JFrame {
 		JLabel benUserLabel = new JLabel("Benefeciary Username");
 		benUserLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		benUserLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		benUserLabel.setBounds(108, 127, 171, 58);
+		benUserLabel.setBounds(10, 89, 171, 58);
 		contentPane.add(benUserLabel);
 		
 		benUsername = new JTextField();
-		benUsername.setBounds(289, 143, 242, 31);
+		benUsername.setBounds(191, 105, 242, 31);
 		contentPane.add(benUsername);
 		benUsername.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Amount");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(165, 205, 128, 13);
+		lblNewLabel.setBounds(67, 167, 128, 13);
 		contentPane.add(lblNewLabel);
 		
 		amount = new JTextField();
-		amount.setBounds(289, 198, 242, 31);
+		amount.setBounds(191, 160, 242, 31);
 		contentPane.add(amount);
 		amount.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Confirm Password");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblNewLabel_1.setBounds(132, 266, 134, 13);
+		lblNewLabel_1.setBounds(34, 228, 134, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		cpass = new JTextField();
-		cpass.setBounds(289, 258, 242, 33);
+		cpass.setBounds(191, 220, 242, 33);
 		contentPane.add(cpass);
 		cpass.setColumns(10);
 		
 		JButton confirm = new JButton("Confirm");
+		confirm.setForeground(new Color(255, 255, 255));
+		confirm.setBackground(new Color(0,0,0));
 		confirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String u=benUsername.getText();
@@ -105,28 +108,31 @@ public class TransferFunds extends JFrame {
 			}
 		});
 		confirm.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		confirm.setBounds(221, 325, 85, 21);
+		confirm.setBounds(123, 287, 85, 21);
 		contentPane.add(confirm);
 		
 		JButton cancel = new JButton("Cancel");
+		cancel.setBackground(new Color(0,0,0));
+		cancel.setForeground(new Color(255, 255, 255));
 		cancel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		cancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		cancel.setBounds(360, 325, 85, 21);
+		cancel.setBounds(262, 287, 85, 21);
 		contentPane.add(cancel);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 102, 204));
-		panel.setBounds(0, 0, 727, 64);
-		contentPane.add(panel);
-		
 		JLabel lblNewLabel_2 = new JLabel("TRANSFER FUNDS");
-		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setBounds(242, 10, 277, 37);
+		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(new Color(0, 0, 0));
 		lblNewLabel_2.setBackground(new Color(255, 255, 255));
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 30));
-		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\NANI\\Documents\\eclipse workspace\\javaProject\\icons\\tarnfer amount.png"));
+		lblNewLabel_3.setBounds(492, 47, 291, 256);
+		contentPane.add(lblNewLabel_3);
 	}
 }

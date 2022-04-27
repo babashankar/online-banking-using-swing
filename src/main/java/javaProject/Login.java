@@ -55,7 +55,7 @@ public class Login extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\NANI\\Documents\\eclipse workspace\\javaProject\\icons\\favicon-32x32.png"));
 		setFont(new Font("Calibri", Font.PLAIN, 14));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 625, 634);
+		setBounds(100, 100, 1048, 570);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBackground(new Color(255, 255, 255));
@@ -64,29 +64,31 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Username");
-		lblNewLabel.setBounds(145, 211, 90, 25);
+		lblNewLabel.setBounds(62, 218, 90, 25);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel.setForeground(new Color(0, 0, 0));
 		contentPane.add(lblNewLabel);
 		
 		userName = new JTextField();
-		userName.setBounds(258, 212, 185, 25);
+		userName.setBounds(175, 219, 185, 25);
 		userName.setForeground(new Color(204, 51, 204));
 		contentPane.add(userName);
 		userName.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Password");
-		lblNewLabel_1.setBounds(145, 275, 76, 13);
+		lblNewLabel_1.setBounds(62, 282, 76, 13);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_1.setForeground(new Color(0, 0, 0));
 		contentPane.add(lblNewLabel_1);
 		
 		password = new JPasswordField();
-		password.setBounds(258, 270, 185, 25);
+		password.setBounds(175, 277, 185, 25);
 		contentPane.add(password);
 		
 		JButton loginButton = new JButton("Login");
-		loginButton.setBounds(191, 334, 85, 21);
+		loginButton.setForeground(new Color(255, 255, 255));
+		loginButton.setBackground(new Color(0,0,0));
+		loginButton.setBounds(108, 341, 85, 21);
 		loginButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -117,7 +119,9 @@ public class Login extends JFrame {
 		contentPane.add(loginButton);
 		
 		JButton resetButton = new JButton("Reset");
-		resetButton.setBounds(305, 334, 85, 21);
+		resetButton.setForeground(new Color(255, 255, 255));
+		resetButton.setBackground(new Color(0,0,0));
+		resetButton.setBounds(222, 341, 85, 21);
 		resetButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,6 +132,8 @@ public class Login extends JFrame {
 		contentPane.add(resetButton);
 		
 		JButton registerBtn = new JButton("New user? Register.");
+		registerBtn.setForeground(new Color(255, 255, 255));
+		registerBtn.setBackground(new Color(0,0,0));
 		registerBtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		registerBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -137,18 +143,19 @@ public class Login extends JFrame {
 			}
 			
 		});
-		registerBtn.setBounds(206, 398, 171, 21);
+		registerBtn.setBounds(123, 405, 171, 21);
 		contentPane.add(registerBtn);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 102, 204));
-		panel.setForeground(new Color(51, 102, 204));
-		panel.setBounds(0, 0, 611, 76);
-		contentPane.add(panel);
-		
 		JLabel lblNewLabel_2 = new JLabel("Login");
-		panel.add(lblNewLabel_2);
-		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setBackground(new Color(0, 0, 0));
+		lblNewLabel_2.setBounds(424, 10, 97, 43);
+		contentPane.add(lblNewLabel_2);
+		lblNewLabel_2.setForeground(new Color(0, 0, 0));
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 35));
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\NANI\\Documents\\eclipse workspace\\javaProject\\icons\\login.png"));
+		lblNewLabel_3.setBounds(582, 98, 414, 435);
+		contentPane.add(lblNewLabel_3);
 	}
 }

@@ -43,14 +43,9 @@ public class Welcome extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel topmenu = new JLabel("");
-		topmenu.setIcon(new ImageIcon("C:\\Users\\NANI\\Downloads\\ibanking.png"));
-		topmenu.setBounds(0, 0, 857, 84);
-		contentPane.add(topmenu);
-		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 102, 204));
 		panel.setBounds(0, 77, 243, 503);
+		panel.setBackground(new Color(0, 0, 0));
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -65,8 +60,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		userInfo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		userInfo.setBounds(0, 53, 243, 29);
-		userInfo.setBackground(new Color(0, 102, 204));
+		userInfo.setBounds(0, 155, 243, 29);
+		userInfo.setBackground(new Color(0, 204, 204));
 		panel.add(userInfo);
 		
 		JButton fundsTransfer = new JButton("Transfer Funds");
@@ -78,8 +73,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		fundsTransfer.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		fundsTransfer.setBackground(new Color(0, 102, 204));
-		fundsTransfer.setBounds(0, 91, 243, 29);
+		fundsTransfer.setBackground(new Color(0, 204, 204));
+		fundsTransfer.setBounds(0, 193, 243, 29);
 		panel.add(fundsTransfer);
 		
 		JButton editDetails = new JButton("Edit Details");
@@ -93,8 +88,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		editDetails.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		editDetails.setBackground(new Color(0, 102, 204));
-		editDetails.setBounds(0, 130, 243, 29);
+		editDetails.setBackground(new Color(0, 204, 204));
+		editDetails.setBounds(0, 232, 243, 29);
 		panel.add(editDetails);
 		
 		JButton recTransactions = new JButton("Recent Transactions");
@@ -106,8 +101,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		recTransactions.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		recTransactions.setBackground(new Color(0, 102, 204));
-		recTransactions.setBounds(0, 169, 243, 29);
+		recTransactions.setBackground(new Color(0, 204, 204));
+		recTransactions.setBounds(0, 271, 243, 29);
 		panel.add(recTransactions);
 		
 		JButton printSmt = new JButton("Print Statement");
@@ -119,8 +114,8 @@ public class Welcome extends JFrame {
 			}
 		});
 		printSmt.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		printSmt.setBackground(new Color(0, 102, 204));
-		printSmt.setBounds(0, 208, 243, 29);
+		printSmt.setBackground(new Color(0, 204, 204));
+		printSmt.setBounds(0, 310, 243, 29);
 		panel.add(printSmt);
 		
 		JButton btnLogout = new JButton("Logout");
@@ -134,7 +129,7 @@ public class Welcome extends JFrame {
 		});
 		btnLogout.setForeground(new Color(255, 250, 250));
 		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLogout.setBackground(new Color(0, 102, 204));
+		btnLogout.setBackground(new Color(0, 204, 204));
 		btnLogout.setBounds(0, 474, 243, 29);
 		panel.add(btnLogout);
 		String u=d.get("username").toString();
@@ -147,15 +142,32 @@ public class Welcome extends JFrame {
 		btnLogout.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 		editDetails.setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\NANI\\Documents\\eclipse workspace\\javaProject\\icons\\profile.png"));
+		lblNewLabel_3.setBounds(66, 10, 110, 110);
+		panel.add(lblNewLabel_3);
+		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\NANI\\Downloads\\Untitled design (1).png"));
 		lblNewLabel.setBounds(439, 112, 253, 197);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\NANI\\Downloads\\Untitled design (1).png"));
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("BANKING MADE SIMPLE.");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		lblNewLabel_1.setBounds(418, 286, 302, 89);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		contentPane.add(lblNewLabel_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(0, 0, 847, 80);
+		panel_1.setBackground(new Color(0, 0, 0));
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("iBANKING");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_2.setBounds(358, 10, 164, 56);
+		panel_1.add(lblNewLabel_2);
 		
 		
 		

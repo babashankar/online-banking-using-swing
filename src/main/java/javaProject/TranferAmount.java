@@ -37,8 +37,9 @@ public class TranferAmount  {
 		
 		Document ben=collection.find(eq("username",username)).first();
 		double b=req.getDouble("balance");
-		double benamt=ben.getDouble("balance");
-		if(ben!=null || username.equals(req.get("username"))) {
+		double benamt;
+		if(ben!=null && !username.equals(req.get("username"))) {
+			benamt=ben.getDouble("balance");
 			if(password.equals(d.get("password"))) {
 				
 				if(b>=amount) {
@@ -46,24 +47,29 @@ public class TranferAmount  {
 					LocalDateTime now=LocalDateTime.now();
 					
 					
-					JOptionPane.showMessageDialog(new JFrame(), "Confirm Transaction","",JOptionPane.OK_CANCEL_OPTION);
-					collection.updateOne(Filters.eq("username",d.get("username")), Updates.set("balance",b-amount));
-					collection.updateOne(Filters.eq("username",ben.get("username")), Updates.set("balance",benamt+amount));
-					Document doc =new Document("username",d.get("username"));
-					doc.append("Timestamp",dtf.format(now));
-					doc.append("Ttype","debit");
-					doc.append("Amount",amount);
-					doc.append("Log","Sent to "+username);
-					doc.append("balance",b-amount);
-					transCollection.insertOne(doc);
-					Document doc2 =new Document("username",username);
-					doc2.append("Timestamp",dtf.format(now));
-					doc2.append("Ttype","credit");
-					doc2.append("Amount",amount);
-					doc2.append("Log","Received from "+username);
-					doc2.append("balance",benamt+amount);
-					transCollection.insertOne(doc2);
-					JOptionPane.showMessageDialog(new JFrame(), "Transaction Successful","Success",JOptionPane.INFORMATION_MESSAGE);
+					int res=JOptionPane.showConfirmDialog(new JFrame(), "Confirm Transaction","",JOptionPane.YES_NO_OPTION);
+					if(res==0) {
+						collection.updateOne(Filters.eq("username",d.get("username")), Updates.set("balance",b-amount));
+						collection.updateOne(Filters.eq("username",ben.get("username")), Updates.set("balance",benamt+amount));
+						Document doc =new Document("username",d.get("username"));
+						doc.append("Timestamp",dtf.format(now));
+						doc.append("Ttype","debit");
+						doc.append("Amount",amount);
+						doc.append("Log","Sent to "+username);
+						doc.append("balance",b-amount);
+						transCollection.insertOne(doc);
+						Document doc2 =new Document("username",username);
+						doc2.append("Timestamp",dtf.format(now));
+						doc2.append("Ttype","credit");
+						doc2.append("Amount",amount);
+						doc2.append("Log","Received from "+username);
+						doc2.append("balance",benamt+amount);
+						transCollection.insertOne(doc2);
+						JOptionPane.showMessageDialog(new JFrame(), "Transaction Successful","Success",JOptionPane.INFORMATION_MESSAGE);
+						
+					}
+					
+					
 						
 				}
 				else {

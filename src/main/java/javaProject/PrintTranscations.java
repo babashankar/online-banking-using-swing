@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import static com.mongodb.client.model.Filters.eq;
 
 import java.io.File;
@@ -96,6 +99,7 @@ public class PrintTranscations {
 				e.printStackTrace();
 			}
  System.out.println("Excel sheet created");	
+ JOptionPane.showMessageDialog(new JFrame(), "Trasactions report generated","",JOptionPane.PLAIN_MESSAGE);
 	}
 	
 

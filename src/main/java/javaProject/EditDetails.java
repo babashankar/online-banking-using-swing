@@ -23,6 +23,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
+import javax.swing.ImageIcon;
 
 public class EditDetails extends JFrame {
 
@@ -49,7 +50,7 @@ public class EditDetails extends JFrame {
 		final Document req=collection.find(eq("username",d.get("username"))).first();
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 728, 541);
+		setBounds(100, 100, 836, 475);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -59,48 +60,48 @@ public class EditDetails extends JFrame {
 		JLabel lblNewLabel = new JLabel("Name");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(125, 181, 117, 13);
+		lblNewLabel.setBounds(30, 129, 117, 13);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Mobile");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(125, 232, 124, 13);
+		lblNewLabel_1.setBounds(30, 180, 124, 13);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("City");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2.setBounds(105, 292, 124, 13);
+		lblNewLabel_2.setBounds(10, 240, 124, 13);
 		contentPane.add(lblNewLabel_2);
 		
 		cName = new JTextField();
-		cName.setBounds(259, 173, 229, 34);
+		cName.setBounds(164, 121, 229, 34);
 		contentPane.add(cName);
 		cName.setColumns(10);
 		cName.setText((req.getString("Fullname")));
 		
 		cMobile = new JTextField();
-		cMobile.setBounds(259, 224, 229, 34);
+		cMobile.setBounds(164, 172, 229, 34);
 		contentPane.add(cMobile);
 		cMobile.setColumns(10);
 		cMobile.setText(req.getString("mobile"));
 		
 		
 		cCity = new JTextField();
-		cCity.setBounds(259, 284, 229, 34);
+		cCity.setBounds(164, 232, 229, 34);
 		contentPane.add(cCity);
 		cCity.setColumns(10);
 		cCity.setText(req.getString("city"));
 		
 		JLabel lblNewLabel_3 = new JLabel("confirm password");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_3.setBounds(125, 352, 170, 13);
+		lblNewLabel_3.setBounds(30, 300, 170, 13);
 		contentPane.add(lblNewLabel_3);
 		
 		cpass = new JTextField();
 		cpass.setColumns(10);
-		cpass.setBounds(259, 344, 229, 34);
+		cpass.setBounds(164, 292, 229, 34);
 		contentPane.add(cpass);
 		
 		JButton editBtn = new JButton("Edit");
@@ -111,23 +112,32 @@ public class EditDetails extends JFrame {
 				String city=cCity.getText();
 				String mobile=cMobile.getText();
 				String p=cpass.getText();
+				if (mobile.length()!=10) {
+					JOptionPane.showMessageDialog(new JFrame(),"Invalid phone number","Error",JOptionPane.ERROR_MESSAGE);
+					
+				}
+				else {
 				if (p.equals(req.getString("password"))) {
-					JOptionPane.showMessageDialog(new JFrame(), "Confirm Edit?","",JOptionPane.OK_CANCEL_OPTION);
-					collection.updateMany(
-						    Filters.eq("username", req.getString("username")),
-						    Updates.combine(
-						        Updates.set("Fullname",name),
-						        Updates.set("city", city),
-						        Updates.set("mobile", mobile)
-						    ));
-					JOptionPane.showMessageDialog(new JFrame(), "Edit Successful","Success",JOptionPane.INFORMATION_MESSAGE);
+					int res=JOptionPane.showConfirmDialog(new JFrame(), "Confirm Edit","",JOptionPane.YES_NO_OPTION);
+					if (res==0) {
+						collection.updateMany(
+							    Filters.eq("username", req.getString("username")),
+							    Updates.combine(
+							        Updates.set("Fullname",name),
+							        Updates.set("city", city),
+							        Updates.set("mobile", mobile)
+							    ));
+						JOptionPane.showMessageDialog(new JFrame(), "Edit Successful","Success",JOptionPane.INFORMATION_MESSAGE);
+						
+					}
+					
 				}
 				else {
 					JOptionPane.showMessageDialog(new JFrame(),"Password Mismatch","Error",JOptionPane.ERROR_MESSAGE);
 				}
-			}
+			}}
 		});
-		editBtn.setBounds(188, 417, 85, 21);
+		editBtn.setBounds(93, 365, 85, 21);
 		contentPane.add(editBtn);
 		
 		JButton cancel = new JButton("Cancel");
@@ -138,18 +148,19 @@ public class EditDetails extends JFrame {
 			}
 		});
 		cancel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		cancel.setBounds(326, 419, 85, 21);
+		cancel.setBounds(231, 367, 85, 21);
 		contentPane.add(cancel);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 102, 204));
-		panel.setBounds(0, 0, 714, 69);
-		contentPane.add(panel);
-		
 		JLabel lblNewLabel_4 = new JLabel("EDIT");
-		lblNewLabel_4.setForeground(new Color(255, 255, 255));
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 38));
-		panel.add(lblNewLabel_4);
+		lblNewLabel_4.setBounds(343, 10, 94, 46);
+		contentPane.add(lblNewLabel_4);
+		lblNewLabel_4.setForeground(new Color(0, 0, 0));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\NANI\\Documents\\eclipse workspace\\javaProject\\icons\\edit.png"));
+		lblNewLabel_5.setBounds(500, 94, 291, 292);
+		contentPane.add(lblNewLabel_5);
 		
 	}
 }
